@@ -1,0 +1,1 @@
+https://bidb.itu.edu.tr/seyir-defteri/blog/2013/09/06/c-'-ta-kullan%C4%B1lan-operat%C3%B6rler-ve-i%C5%9Flevleri

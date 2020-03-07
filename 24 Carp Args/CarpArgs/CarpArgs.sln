@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarpArgs", "CarpArgs\CarpArgs.csproj", "{60BF6B82-D161-4A1F-9331-ED3532A2CFFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60BF6B82-D161-4A1F-9331-ED3532A2CFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60BF6B82-D161-4A1F-9331-ED3532A2CFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60BF6B82-D161-4A1F-9331-ED3532A2CFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60BF6B82-D161-4A1F-9331-ED3532A2CFFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CDACB07D-6911-47EB-9973-D9D81F33A614}
+	EndGlobalSection
+EndGlobal

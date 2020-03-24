@@ -10,31 +10,39 @@ namespace YıldızlarlaPiramit
     {
         static void Main(string[] args)
         {
-            /*      
-    *
-   * *
-  * * *
- * * * *
-* * * * *
+            
 
-       */
-            Console.Write("Konsola Piramit Kat Sayısı Giriniz : ");
-            string katString = Console.ReadLine();
-            int kat = Convert.ToInt32(katString);
+            //kat sayısı  = 5
 
+            //....* 4 bosluk 1 yıldız
+            //...*** 3 bosluk 3 yıldız
+            //..***** 2 bosluk 5 yıldız
+            //.******* 1 bosluk 7 yıldız
+            //********* 0 bosluk 9 yıldız
+
+
+            Console.Write("Konsola Piramitin Kat Sayısını Giriniz : ");
+            string girilenString = Console.ReadLine();
+            int kat = Convert.ToInt32(girilenString);
+
+            int yıldız = 1;
+            int bosluk = kat - 1;
             for (int i = 0; i < kat; i++)
             {
-                Console.WriteLine("*");
+                for (int j = 0; j < bosluk; j++)
+                {
+                    Console.Write(" ");
+                }
 
-                for (int j = i; j < kat; j++)
+                for (int k = 0; k < yıldız; k++)
                 {
                     Console.Write("*");
                 }
-                
+                Console.WriteLine();
+                bosluk--;
+                yıldız = yıldız + 2;
+
             }
-
-
-
             Console.ReadKey();
         }
     }

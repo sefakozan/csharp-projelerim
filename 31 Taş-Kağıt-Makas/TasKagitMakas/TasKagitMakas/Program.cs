@@ -40,7 +40,11 @@ namespace TasKagitMakas
                     break;
                 }
 
-
+                if (kullanicininTahmini != "t" && kullanicininTahmini != "m" && kullanicininTahmini != "k") 
+                {
+                    Console.WriteLine("Konsola geçerli bir değer giriniz!!!");
+                    continue;
+                }
                 
                 int rndNumber = random.Next(0, 3);
                 string bilgisarTahmini = string.Empty;

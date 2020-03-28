@@ -18,8 +18,7 @@ namespace PalindromDosya
             string okunanSatirlar = File.ReadAllText(DosyaYolu);
             string[] kelimeler = okunanSatirlar.Split(' ', '#', '\n', '\r');
 
-           
-
+            int PolindromOlanlar = 0;
 
             for (int i = 0; i < kelimeler.Length; i++)
             {
@@ -32,14 +31,16 @@ namespace PalindromDosya
 
                 if (PolindromKontrol == false)
                 {
-
                 }
                 else
                 {
                     Console.WriteLine(kelimeler[i]);
+                    PolindromOlanlar++;
                 }
-            }
 
+            }
+            Console.WriteLine("Toplam palindrom sayisi: {0}", PolindromOlanlar);
+            Console.WriteLine("Program bitti. Çıkmak için herhangi bir tuşa basınız...");
             Console.ReadKey();
 
         }

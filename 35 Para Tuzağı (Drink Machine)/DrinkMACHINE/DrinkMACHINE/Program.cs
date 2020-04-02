@@ -10,6 +10,10 @@ namespace DrinkMACHINE
     {
         static void Ana(string[] args)
         {
+            // ilk yazılan kod bu. Bu kodda bir çok hata yapılmıştır. 
+            // Bu hatalar DrinkingMachine.cs yazılan yeni kodda düzeltildi.
+            // Burdaki Main fonksiyonun adı 'Ana' olarak değiştirildi.
+
             Console.Title = "Para Tuzağı (Drink Machine)";
             PrintGreeting();
             Console.ReadKey();

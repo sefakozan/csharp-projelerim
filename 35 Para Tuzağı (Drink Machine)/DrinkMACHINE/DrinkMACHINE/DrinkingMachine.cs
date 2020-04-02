@@ -183,13 +183,15 @@ namespace DrinkMACHINE
                 // değilse geçerli bir para birimi girene kadar para istiyecek
                 if (alinanPara == 5 || alinanPara == 10 || alinanPara == 15 || alinanPara == 25 || alinanPara == 50)
                 {
-                    if (alinanPara >= alinacakPara)
+                    // Alınan para kabul edildi.
+                    toplamAlinanPara = toplamAlinanPara + alinanPara;
+
+                    if (toplamAlinanPara >= alinacakPara)
                     {
-                        paraUstu = alinanPara - alinacakPara;
+                        paraUstu = toplamAlinanPara - alinacakPara;
                     }
                     else
                     {
-                        toplamAlinanPara = toplamAlinanPara + alinanPara;
                         Console.WriteLine("- You Need To Pay {0}TL More", alinacakPara - toplamAlinanPara);
                         Console.WriteLine("- Devam Etmek icin Bir Tusa Basiniz...");
                         Console.WriteLine();
@@ -210,7 +212,7 @@ namespace DrinkMACHINE
             Console.WriteLine(".................#...#...#.........____....................................#...#...#.................");
             Console.WriteLine(".................##.###.##.........|___|..*../..||.//.|----..\\..//.........##.###.##.................");
             Console.WriteLine(".................#########.........|.\\....|.---.|//...|--.....\\//..........#########.................");
-            Console.WriteLine(".................#########.........|..\\...|.../.|.\\...|----...//...........#########.................");
+            Console.WriteLine(".................#########.........|..\\...|.../.|.\\...|----...//...........#########.................\n");
             Console.WriteLine("Program sonlandı, kapatmak için herhengi bir tuşa basınız.");
             Console.ReadKey();
         }

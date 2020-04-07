@@ -22,7 +22,7 @@ namespace AutoMorphicNumber
         }
         static void StartAutoMorphic()
         {
-            int girilenSayi = KullanicidanSayiAl();
+            long girilenSayi = KullanicidanSayiAl();
 
             if (girilenSayi <= 0)
             {
@@ -31,7 +31,7 @@ namespace AutoMorphicNumber
 
             for (int i = 0; i <= girilenSayi; i++)
             {
-                int kare = KareAl(i);
+                long kare = KareAl(i);
 
                 bool OtoMorfik = IsAutoMorphic(i , kare);
           
@@ -41,7 +41,7 @@ namespace AutoMorphicNumber
                 }
             }
         }
-        static int KullanicidanSayiAl()
+        static long KullanicidanSayiAl()
         {
             int num = -1;
 
@@ -50,7 +50,7 @@ namespace AutoMorphicNumber
 
             try
             {
-                return Convert.ToInt32(girilenSayiStr);
+                return Convert.ToInt64(girilenSayiStr);
                 
             }
             catch
@@ -59,13 +59,13 @@ namespace AutoMorphicNumber
             }
         }
 
-        static int KareAl(int sayi)
+        static long KareAl(long sayi)
         {
-            int kare;
+            long kare;
             kare = sayi * sayi;
             return kare;
         }
-        static bool IsAutoMorphic(int sayi, int kare)
+        static bool IsAutoMorphic(long sayi, long kare)
         {           
             string sayiStr = Convert.ToString(sayi);
             string kareStr = Convert.ToString(kare);

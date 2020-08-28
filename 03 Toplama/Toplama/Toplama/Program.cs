@@ -10,6 +10,9 @@ namespace Toplama
     {
         static void Main(string[] args)
         {
+            int sayi1, sayi2, toplam;
+            string sayi1Str, sayi2Str;
+
             while (true)
             {
                 //int a, b, c;
@@ -27,19 +30,14 @@ namespace Toplama
                 //Console.dWriteLine("Toplam Sayı : " + c);
                 //Console.WriteLine(" ");
 
-                // üç degişken tanıplayıp, 0 atayacaz
-                // 0'la initialize edecez
-                int sayi1 = 0;
-                int sayi2 = 0;
-                int toplam = 0;
 
-                // birinci sayıyı kullanıcıdan oku
                 Console.Write("\tHosgeldiniz\n\n");
                 Console.Write(">>> Konsola birinci sayiyi yaziniz!.. yada exit\n");
                 Console.Write(">");
 
-                string sayi1Str = Console.ReadLine();
+                sayi1Str = Console.ReadLine();
 
+                sayi1Str = sayi1Str.ToLower();
                 if (sayi1Str == "exit")
                 {
                     break;
@@ -51,16 +49,15 @@ namespace Toplama
                 Console.WriteLine("\n>>> Konsola ikinci sayiyi yaziniz!..yada exit");
                 Console.Write(">");
 
-                string sayi2Str = Console.ReadLine();
+                sayi2Str = Console.ReadLine();
 
-
+                sayi2Str = sayi2Str.ToLower();
                 if (sayi2Str == "exit")
                 {
                     break;
                 }
 
-
-                sayi2 = Convert.ToInt32(sayi1Str);
+                sayi2 = Convert.ToInt32(sayi2Str);
 
                 // toplamı hesapla yazdır.
                 toplam = sayi1 + sayi2;

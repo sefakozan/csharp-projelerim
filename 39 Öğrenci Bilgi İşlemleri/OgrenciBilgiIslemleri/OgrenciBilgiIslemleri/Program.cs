@@ -18,7 +18,7 @@ namespace deneme3
         static void StartProgram()
         {
             string[] ogrenciAdSoyad = new string[10];
-            int[] ogrenciNot = new int[10];
+            double[] ogrenciNot = new double[10];
             // sinifta kaç kişi oldugunu söyleyen değişken(sira)
             int sira = 0;
 
@@ -41,7 +41,11 @@ namespace deneme3
                         break;
                     case 3:
                         double ortalama = SinifBasarisi(ogrenciNot, sira);
+                        
+                        Console.WriteLine(new string('_', 30));
+                        Console.WriteLine();
                         Console.WriteLine($"Sinif Başarısı = {ortalama}");
+                        Console.WriteLine(new string('_', 30));
                         sira++;
                         break;
                 }
@@ -71,8 +75,17 @@ namespace deneme3
 
             do
             {
-                Console.Write("İşlem Numarasını Giriniz: ");
-                islemNo = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    Console.Write("İşlem Numarasını Giriniz: ");
+                    islemNo = Convert.ToInt32(Console.ReadLine());
+                }
+                
+                catch
+                {
+                    Console.WriteLine("Lütfen 1 ile 4 arasında sayı giriniz!..");
+                }
+
 
             } while (islemNo < 1 || islemNo > 4);
 
@@ -84,7 +97,7 @@ namespace deneme3
         /// </summary>
         /// <param name="ogrenci">öğrenci bilgileri ad-soyad ogrenci dizisine atayacak</param>
         /// <param name="ogrenciNot">öğrenci notunu not dizinie atayacak</param>
-        static void OgrenciKayit(string[] ogrenciAdSoyad, int[] ogrenciNot, int sira)
+        static void OgrenciKayit(string[] ogrenciAdSoyad, double[] ogrenciNot, int sira)
         {
             Console.Write("\nÖğrenci Adını Giriniz: ");
             string ogrAd = Console.ReadLine();
@@ -93,7 +106,7 @@ namespace deneme3
             string ogrSoyAd = Console.ReadLine();
 
             Console.Write("Öğrenci Yıl Sonu Notunu Giriniz: ");
-            int ogrNot = Convert.ToInt32(Console.ReadLine());
+            double ogrNot = Convert.ToDouble(Console.ReadLine());
 
             for (int i = sira; i <= sira; i++)
             {
@@ -104,20 +117,34 @@ namespace deneme3
             Console.WriteLine("Öğrenci Kayıt İşleminiz Başarıyla Gerçekleşmiştir.");
         }
 
-        static void SinifListesi(string[] ogrenciAdSoyad, int[] ogrenciNot, int sira)
+        static void SinifListesi(string[] ogrenciAdSoyad, double[] ogrenciNot, int sira)
         {
+            string ogrnNotStr;
+
+            Console.WriteLine(new string('_', 50));
             Console.WriteLine();
             Console.WriteLine("{0,30}", "Sınıf Listesi \n");
             Console.WriteLine("{0,10} {1,20}", "Ad-SoyAd", "Not");
-            Console.WriteLine(new string('-', 50));
+            Console.WriteLine(new string('_', 50));
 
             for (int i = 0; i < sira; i++)
             {
                 string ogrnAdSoyad = ogrenciAdSoyad[i];
-                int ogrnNot = ogrenciNot[i];
+                double ogrnNot = ogrenciNot[i];
 
-                Console.WriteLine("{0,0} {1,20}", $"{i + 1:D2}. {ogrnAdSoyad}", ogrnNot);
+                if (ogrnNot == 0)
+                {
+                    ogrnNotStr = ogrnNot.ToString();
+                    ogrnNotStr = "";
+                    Console.WriteLine("{0,0}", ogrnNotStr);
+                }
+                else
+                {
+                    Console.WriteLine("{0,0} {1,17}", $"{i + 1:D2}. {ogrnAdSoyad}", ogrnNot);
+                }
+                
             }
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -126,11 +153,16 @@ namespace deneme3
         /// <param name="ogrnNot">öğrenci notları</param>
         /// <param name="sira">sınıfta kaç kişi olduğunu söyleyen değişken</param>
         /// <returns></returns>
-        static double SinifBasarisi(int[] ogrnNot, int sira)
+        static double SinifBasarisi(double[] ogrnNot, int sira)
         {
             double top = 0;
 
-            for (int i = 0; i < 10; i++)
+            if(sira == 0)
+            {
+                return 0;
+            }
+
+            for (int i = 0; i < sira; i++)
                 top = top + ogrnNot[i];
 
             double ort = top / sira;
